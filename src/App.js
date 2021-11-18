@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import "./App.css";
-import DemoOutput from "./components/Demo/DemoOutput";
-import Button from "./components/UI/Button/Button";
+import React, { useState } from 'react';
+
+import Button from './components/UI/Button/Button';
+import DemoOutput from './components/Demo/DemoOutput';
+import './App.css';
+
 function App() {
-  console.log("App loaded!");
-  const [isDisplay, setIsDisplay] = useState(false);
-  const clickHandler = (e) => {
-    console.log("state changed.");
-    e.preventDefault();
-    setIsDisplay((isDisplay) => !isDisplay);
+  const [showParagraph, setShowParagraph] = useState(false);
+
+  console.log('APP RUNNING');
+
+  const toggleParagraphHandler = () => {
+    setShowParagraph((prevShowParagraph) => !prevShowParagraph);
   };
+ 
   return (
     <div className="app">
       <h1>Hi there!</h1>
       <DemoOutput show={false} />
-      {isDisplay && <h1>Maybe dispaly</h1>}
-      <Button onClick={clickHandler}>Click me</Button>
+      <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import DemoOutput from "./components/Demo/DemoOutput";
+import Button from "./components/UI/Button/Button";
 function App() {
   console.log("App loaded!");
   const [isDisplay, setIsDisplay] = useState(false);
@@ -12,9 +13,9 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={isDisplay} />
+      <DemoOutput show={false} />
       {isDisplay && <h1>Maybe dispaly</h1>}
-      <button onClick={clickHandler}>Click me</button>
+      <Button onClick={clickHandler}>Click me</Button>
     </div>
   );
 }
